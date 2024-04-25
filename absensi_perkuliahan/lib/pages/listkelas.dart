@@ -1,4 +1,7 @@
+import 'package:absensi_perkuliahan/pages/sidebar.dart';
 import 'package:flutter/material.dart';
+import 'package:absensi_perkuliahan/pages/detailkelas.dart';
+
 
 void main() => runApp(const ListKelasPage());
 
@@ -23,9 +26,13 @@ class ListKelasPage extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Aksi yang dijalankan saat menu di klik
+            Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Sidebar()),
+    );
           },
         ),
+
         title: Row(
           children: [
             Image.asset(
@@ -52,159 +59,183 @@ class ListKelasPage extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff58923B),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SI621400 - Audit Sistem Informasi',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Genap 2023-2024 (Kelas B)',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Adi Arga Arifnur, M. Kom & Hasdi Putra, M. T',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+InkWell(
+  onTap: () {
+       Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => DetailKelasPage()),
+    );
+  },
+  child: Container(
+    decoration: BoxDecoration(
+      color: const Color(0xff58923B),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'SI62135 - Big Data',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          'Genap 2023-2024 (Kelas B)',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 16),
+        Text(
+          'Jefril Rahmadoni, M. Kom & Adi Arga Arifnur, M. Kom',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+SizedBox(
+  height: 16,
+),
+
+            InkWell(
+  onTap: () {
+    // Aksi yang dijalankan saat tombol ditekan
+  },
+  child: Container(
+    decoration: BoxDecoration(
+      color: const Color(0xff58923B),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'SI621400 - Audit Sistem Informasi',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          'Genap 2023-2024 (Kelas B)',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 16),
+        Text(
+          'Adi Arga Arifnur, M. Kom & Hasdi Putra, M. T',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
               SizedBox(
                 height: 16,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff58923B),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SI60202 - Pemograman Multiplatform',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Genap 2023-2024 (Kelas B)',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Husnil Kamil, M. T',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff58923B),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SI62135 - Big Data',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Genap 2023-2024 (Kelas B)',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Jefril Rahmadoni, M. Kom & Adi Arga Arifnur, M. Kom',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff58923B),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'SI62136 - Intelligent Bisnis',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      'Genap 2023-2024 (Kelas B)',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Rahmatika Pratama Santi, M. T',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+             InkWell(
+  onTap: () {
+    // Aksi yang dijalankan saat tombol ditekan
+  },
+  child: Container(
+    decoration: BoxDecoration(
+      color: const Color(0xff58923B),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'SI60209 - No Sql',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          'Genap 2023-2024 (Kelas B)',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 16),
+        Text(
+          'Aina Hubby Aziira, M. Eng',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
+            SizedBox(
+  height: 16,
+),
+InkWell(
+  onTap: () {
+    // Aksi yang dijalankan saat tombol ditekan
+  },
+  child: Container(
+    decoration: BoxDecoration(
+      color: const Color(0xff58923B),
+      borderRadius: BorderRadius.circular(12),
+    ),
+    padding: const EdgeInsets.all(16),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'SI62136 - Intelligent Bisnis',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          'Genap 2023-2024 (Kelas B)',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+        const SizedBox(height: 16),
+        Text(
+          'Rahmatika Pratama Santi, M. T',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.white,
+          ),
+        ),
+      ],
+    ),
+  ),
+),
             ],
           ),
         ),

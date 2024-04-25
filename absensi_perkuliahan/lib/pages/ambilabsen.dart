@@ -1,3 +1,6 @@
+import 'package:absensi_perkuliahan/pages/ajuizin.dart';
+import 'package:absensi_perkuliahan/pages/detailkelas.dart';
+import 'package:absensi_perkuliahan/pages/sidebar.dart';
 import 'package:flutter/material.dart';
 
 class AmbilAbsenPage extends StatelessWidget {
@@ -17,7 +20,10 @@ class AmbilAbsenPage extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Aksi yang dijalankan saat menu di klik
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Sidebar()),
+            );
           },
         ),
         title: Row(
@@ -114,7 +120,10 @@ class AmbilAbsenPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      // Aksi yang ingin dilakukan saat tombol ditekan
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AjuIzinPage()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -268,7 +277,10 @@ class AmbilAbsenPage extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Aksi yang ingin dilakukan saat tombol ditekan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailKelasPage()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:absensi_perkuliahan/pages/detailkelas.dart';
+import 'package:absensi_perkuliahan/pages/sidebar.dart';
 
 class AjuIzinPage extends StatefulWidget {
   const AjuIzinPage({Key? key}) : super(key: key);
@@ -28,15 +30,18 @@ class _AjuIzinPageState extends State<AjuIzinPage> {
             size: 30,
           ),
           onPressed: () {
-            // Aksi yang dijalankan saat menu di klik
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Sidebar()),
+            );
           },
         ),
         title: Row(
           children: [
             Image.asset(
               'assets/images/unand.png',
-              width: 50,
-              height: 50,
+              width: 30,
+              height: 30,
             ),
             const SizedBox(width: 10),
             Text(
@@ -58,46 +63,46 @@ class _AjuIzinPageState extends State<AjuIzinPage> {
             SizedBox(
               height: 16,
             ),
-                        Text(
+            Text(
               'Jenis Izin',
               style: TextStyle(
                 fontSize: 20,
               ),
             ),
-DropdownButtonFormField<String>(
-      isExpanded: true,
-      decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(vertical: 16),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-      ),
-      hint: const Text(
-        '   Pilih Izin',
-        style: TextStyle(fontSize: 14),
-      ),
-      items: izinItems
-          .map((item) => DropdownMenuItem<String>(
-                value: item,
-                child: Text(
-                  item,
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
+            DropdownButtonFormField<String>(
+              isExpanded: true,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(vertical: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-              ))
-          .toList(),
-      value: valueListenable.value,
-      validator: (value) {
-        if (value == null) {
-          return 'Pilih izin.';
-        }
-        return null;
-      },
-      onChanged: (value) {
-        valueListenable.value = value;
-      },
-    ),
+              ),
+              hint: const Text(
+                '   Pilih Izin',
+                style: TextStyle(fontSize: 14),
+              ),
+              items: izinItems
+                  .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ))
+                  .toList(),
+              value: valueListenable.value,
+              validator: (value) {
+                if (value == null) {
+                  return 'Pilih izin.';
+                }
+                return null;
+              },
+              onChanged: (value) {
+                valueListenable.value = value;
+              },
+            ),
             SizedBox(
               height: 16,
             ),
@@ -129,7 +134,8 @@ DropdownButtonFormField<String>(
                     maxLines: null,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Masukkan alasan anda tidak bisa hadir pertemuan saat ini',
+                      hintText:
+                          'Masukkan alasan anda tidak bisa hadir pertemuan saat ini',
                     ),
                     onChanged: (value) {
                       setState(() {
@@ -195,7 +201,10 @@ DropdownButtonFormField<String>(
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Aksi yang ingin dilakukan saat tombol ditekan
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailKelasPage()),
+                );
                 print('Alasan: $alasan');
               },
               style: ElevatedButton.styleFrom(

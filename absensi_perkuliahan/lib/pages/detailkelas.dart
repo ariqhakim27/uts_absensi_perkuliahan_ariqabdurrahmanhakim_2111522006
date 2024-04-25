@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:absensi_perkuliahan/pages/detailpertemuan.dart';
+import 'package:absensi_perkuliahan/pages/sidebar.dart';
 
 class DetailKelasPage extends StatelessWidget {
   const DetailKelasPage({Key? key}) : super(key: key);
@@ -17,7 +19,10 @@ class DetailKelasPage extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Aksi yang dijalankan saat menu di klik
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Sidebar()),
+            );
           },
         ),
         title: Row(
@@ -181,27 +186,53 @@ class DetailKelasPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Aksi yang dijalankan saat tombol "Detail" ditekan
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        backgroundColor: Colors.green,
-                      ),
-                      child: Text(
-                        'Detail',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                  Divider(
+                    color: Colors.grey,
                   ),
+                  const SizedBox(height: 8),
+                  Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Text(
+                            'Tidak Hadir/Izin',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailPertemuanPage()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            backgroundColor: Colors.green,
+                          ),
+                          child: Text(
+                            'Detail',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -252,31 +283,56 @@ class DetailKelasPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Aksi yang dijalankan saat tombol "Detail" ditekan
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        backgroundColor: Colors.green,
-                      ),
-                      child: Text(
-                        'Detail',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                  Divider(
+                    color: Colors.grey,
                   ),
+                  const SizedBox(height: 8),
+                  Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Text(
+                            'Hadir',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailPertemuanPage()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            backgroundColor: Colors.green,
+                          ),
+                          child: Text(
+                            'Detail',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
-
             SizedBox(height: 16),
             Container(
               decoration: BoxDecoration(
@@ -324,32 +380,56 @@ class DetailKelasPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Aksi yang dijalankan saat tombol "Detail" ditekan
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        backgroundColor: Colors.green,
-                      ),
-                      child: Text(
-                        'Detail',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                  Divider(
+                    color: Colors.grey,
                   ),
+                  const SizedBox(height: 8),
+                  Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.bottomLeft,
+                        child: Padding(
+                          padding: EdgeInsets.all(12),
+                          child: Text(
+                            'Belum Absen',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailPertemuanPage()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            backgroundColor: Colors.green,
+                          ),
+                          child: Text(
+                            'Detail',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
-
-
           ],
         ),
       ),

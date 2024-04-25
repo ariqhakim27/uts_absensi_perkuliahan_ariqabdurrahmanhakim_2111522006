@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       //untuk uji sama cek halaman layout yang lain pak
       home: ListKelasPage(), // Menggunakan ListKelasPage sebagai halaman utama
       //home: DetailPertemuanPage(),
-      //home: DetailKelasPage(),
+     //home: DetailKelasPage(),
       //home: DetailPertemuanPage(),
       //home: AmbilAbsenPage(),
       //home: AjuizinPage(),

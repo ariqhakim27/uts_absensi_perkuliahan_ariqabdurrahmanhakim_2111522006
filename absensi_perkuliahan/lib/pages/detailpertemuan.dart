@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:absensi_perkuliahan/pages/ambilabsen.dart';
+import 'package:absensi_perkuliahan/pages/sidebar.dart';
 
 class DetailPertemuanPage extends StatelessWidget {
   const DetailPertemuanPage({Key? key}) : super(key: key);
@@ -17,7 +19,10 @@ class DetailPertemuanPage extends StatelessWidget {
             size: 30,
           ),
           onPressed: () {
-            // Aksi yang dijalankan saat menu di klik
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Sidebar()),
+            );
           },
         ),
         title: Row(
@@ -146,11 +151,16 @@ class DetailPertemuanPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                   ),
+                  const SizedBox(height: 16),
                   Align(
                     alignment: Alignment.bottomRight,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Aksi yang dijalankan saat tombol "Detail" ditekan
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AmbilAbsenPage()),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
