@@ -56,35 +56,37 @@ class DetailKelasPage extends StatelessWidget {
                 color: const Color(0xff58923B),
                 borderRadius: BorderRadius.circular(12),
               ),
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'SI62135 - Big Data',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'SI62135 - Big Data',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Genap 2023-2024 (Kelas B)',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
+                    const SizedBox(height: 8),
+                    Text(
+                      'Genap 2023-2024 (Kelas B)',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Jefril Rahmadoni, M. Kom & Adi Arga Arifnur, M. Kom',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
+                    const SizedBox(height: 16),
+                    Text(
+                      'Jefril Rahmadoni, M. Kom & Adi Arga Arifnur, M. Kom',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             SizedBox(
@@ -140,296 +142,388 @@ class DetailKelasPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFFF7F8F7),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // Mengatur posisi bayangan
-                  ),
-                ],
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-              ),
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Membahas RPS & Pengantar Big Data',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Pertemuan 1',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '15-03-2024',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  const SizedBox(height: 8),
-                  Stack(
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomLeft,
-                        child: Padding(
-                          padding: EdgeInsets.all(12),
-                          child: Text(
-                            'Tidak Hadir/Izin',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.red,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DetailPertemuanPage()),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            backgroundColor: Colors.green,
-                          ),
-                          child: Text(
-                            'Detail',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
+
+                        SizedBox(height: 16),
+Center(
+child: Container(
+width: MediaQuery.of(context).size.width - 80,
+decoration: BoxDecoration(
+color: const Color(0xFFF7F8F7),
+borderRadius: BorderRadius.circular(10),
+boxShadow: [
+BoxShadow(
+color: Colors.grey.withOpacity(0.3),
+spreadRadius: 1,
+blurRadius: 3,
+offset: Offset(0, 2),
+),
+],
+),
+padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
+child: Stack(
+children: [
+InkWell(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => DetailPertemuanPage()),
+);
+},
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+Expanded(
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Text(
+'Membahas RPS & Pengantar Big Data',
+style: TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.bold,
+color: Colors.black,
+),
+),
+const SizedBox(height: 6),
+Text(
+'Pertemuan 1',
+style: TextStyle(
+fontSize: 16,
+color: Colors.black,
+),
+),
+const SizedBox(height: 4),
+Text(
+'15-03-2024',
+style: TextStyle(
+fontSize: 12,
+color: Colors.grey,
+),
+),
+],
+),
+),
+Padding(
+padding: const EdgeInsets.all(8.0),
+child: Icon(
+Icons.check_circle,
+color: Colors.green,
+size: 30,
+),
+),
+],
+),
+),
+],
+),
+),
+),
             SizedBox(height: 16),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFFF7F8F7),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // Mengatur posisi bayangan
-                  ),
-                ],
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-              ),
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Life Cycle, Technologies & Storage',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Pertemuan 2',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '22-03-2024',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  const SizedBox(height: 8),
-                  Stack(
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomLeft,
-                        child: Padding(
-                          padding: EdgeInsets.all(12),
-                          child: Text(
-                            'Hadir',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DetailPertemuanPage()),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            backgroundColor: Colors.green,
-                          ),
-                          child: Text(
-                            'Detail',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            SizedBox(height: 16),
-            Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFFF7F8F7),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 3), // Mengatur posisi bayangan
-                  ),
-                ],
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 1.0,
-                ),
-              ),
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Life Cycle, Technologies & Storage 2',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Pertemuan 3',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    '29-03-2024',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  const SizedBox(height: 8),
-                  Stack(
-                    children: [
-                      Container(
-                        alignment: Alignment.bottomLeft,
-                        child: Padding(
-                          padding: EdgeInsets.all(12),
-                          child: Text(
-                            'Belum Absen',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DetailPertemuanPage()),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            backgroundColor: Colors.green,
-                          ),
-                          child: Text(
-                            'Detail',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
+
+Center(
+child: Container(
+width: MediaQuery.of(context).size.width - 80,
+decoration: BoxDecoration(
+color: const Color(0xFFF7F8F7),
+borderRadius: BorderRadius.circular(10),
+boxShadow: [
+BoxShadow(
+color: Colors.grey.withOpacity(0.3),
+spreadRadius: 1,
+blurRadius: 3,
+offset: Offset(0, 2),
+),
+],
+),
+padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
+child: Stack(
+children: [
+InkWell(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => DetailPertemuanPage()),
+);
+},
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+Expanded(
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Text(
+'Life Cycle, Technologies & Storage',
+style: TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.bold,
+color: Colors.black,
+),
+),
+const SizedBox(height: 6),
+Text(
+'Pertemuan 2',
+style: TextStyle(
+fontSize: 16,
+color: Colors.black,
+),
+),
+const SizedBox(height: 4),
+Text(
+'22-03-2024',
+style: TextStyle(
+fontSize: 12,
+color: Colors.grey,
+),
+),
+],
+),
+),
+Padding(
+padding: const EdgeInsets.all(8.0),
+child: Icon(
+Icons.cancel,
+color: Colors.red,
+size: 30,
+),
+),
+],
+),
+),
+],
+),
+),
+),
+
+SizedBox(height: 16),
+Center(
+child: Container(
+width: MediaQuery.of(context).size.width - 80,
+decoration: BoxDecoration(
+color: const Color(0xFFF7F8F7),
+borderRadius: BorderRadius.circular(10),
+boxShadow: [
+BoxShadow(
+color: Colors.grey.withOpacity(0.3),
+spreadRadius: 1,
+blurRadius: 3,
+offset: Offset(0, 2),
+),
+],
+),
+padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
+child: Stack(
+children: [
+InkWell(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => DetailPertemuanPage()),
+);
+},
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+Expanded(
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Text(
+'Life Cycle, Technologies & Storage 2',
+style: TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.bold,
+color: Colors.black,
+),
+),
+const SizedBox(height: 6),
+Text(
+'Pertemuan 3',
+style: TextStyle(
+fontSize: 16,
+color: Colors.black,
+),
+),
+const SizedBox(height: 4),
+Text(
+'29-03-2024',
+style: TextStyle(
+fontSize: 12,
+color: Colors.grey,
+),
+),
+],
+),
+),
+Padding(
+padding: const EdgeInsets.all(8.0),
+child: Icon(
+Icons.block,
+color: Colors.grey,
+size: 30,
+),
+),
+],
+),
+),
+],
+),
+),
+),
+SizedBox(height: 16),
+
+Center(
+child: Container(
+width: MediaQuery.of(context).size.width - 80,
+decoration: BoxDecoration(
+color: const Color(0xFFF7F8F7),
+borderRadius: BorderRadius.circular(10),
+boxShadow: [
+BoxShadow(
+color: Colors.grey.withOpacity(0.3),
+spreadRadius: 1,
+blurRadius: 3,
+offset: Offset(0, 2),
+),
+],
+),
+padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
+child: Stack(
+children: [
+InkWell(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => DetailPertemuanPage()),
+);
+},
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+Expanded(
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Text(
+'Life Cycle, Technologies & Storage 3',
+style: TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.bold,
+color: Colors.black,
+),
+),
+const SizedBox(height: 6),
+Text(
+'Pertemuan 4',
+style: TextStyle(
+fontSize: 16,
+color: Colors.black,
+),
+),
+const SizedBox(height: 4),
+Text(
+'06-04-2024',
+style: TextStyle(
+fontSize: 12,
+color: Colors.grey,
+),
+),
+],
+),
+),
+Padding(
+padding: const EdgeInsets.all(8.0),
+child: Icon(
+Icons.block,
+color: Colors.grey,
+size: 30,
+),
+),
+],
+),
+),
+],
+),
+),
+),
+SizedBox(height: 16),
+
+Center(
+child: Container(
+width: MediaQuery.of(context).size.width - 80,
+decoration: BoxDecoration(
+color: const Color(0xFFF7F8F7),
+borderRadius: BorderRadius.circular(10),
+boxShadow: [
+BoxShadow(
+color: Colors.grey.withOpacity(0.3),
+spreadRadius: 1,
+blurRadius: 3,
+offset: Offset(0, 2),
+),
+],
+),
+padding: const EdgeInsets.fromLTRB(20, 6, 20, 6),
+child: Stack(
+children: [
+InkWell(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(builder: (context) => DetailPertemuanPage()),
+);
+},
+child: Row(
+crossAxisAlignment: CrossAxisAlignment.center,
+children: [
+Expanded(
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Text(
+'Life Cycle, Technologies & Storage 4',
+style: TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.bold,
+color: Colors.black,
+),
+),
+const SizedBox(height: 6),
+Text(
+'Pertemuan 5',
+style: TextStyle(
+fontSize: 16,
+color: Colors.black,
+),
+),
+const SizedBox(height: 4),
+Text(
+'12-04-2024',
+style: TextStyle(
+fontSize: 12,
+color: Colors.grey,
+),
+),
+],
+),
+),
+Padding(
+padding: const EdgeInsets.all(8.0),
+child: Icon(
+Icons.block,
+color: Colors.grey,
+size: 30,
+),
+),
+],
+),
+),
+],
+),
+),
+),
+
+
           ],
         ),
       ),
